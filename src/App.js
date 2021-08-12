@@ -19,6 +19,7 @@ function App() {
             <Helloworld mytext="Carlos!" subtitulo="Nuevo mensaje"/>
             <Helloworld mytext="Miguell!" subtitulo="Nuevo manzanas"/>
             <Helloworld mytext="Manuel!" subtitulo="Nuevo peras"/>
+            <Helloworld mytext="Manuel!" subtitulo="Nuevo peras"/>
         </div>
     );
 }
