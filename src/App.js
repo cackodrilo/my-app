@@ -1,27 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import React, {Component} from 'react';
+import tasks from './sample/tasks.json';
+import Tasks from './components/Tasks';
 
-function Helloworld(props){
-    console.log(props);
-    return(
-        <div id="hello">
-            <h3>{props.mytext}</h3>
-            <p>{props.subtitulo}</p>
-        </div>
-    );
-}
+class App extends Component {
 
-function App() {
-    return (
-        <div>
-            Este es mi componente:
-            <Helloworld mytext="Carlos!" subtitulo="Nuevo mensaje"/>
-            <Helloworld mytext="Miguell!" subtitulo="Nuevo manzanas"/>
-            <Helloworld mytext="Manuel!" subtitulo="Nuevo peras"/>
-            <Helloworld mytext="Manuel!" subtitulo="Nuevo peras"/>
+    state = {
+        tasks: tasks
+    }
+
+    render() {
+        return <div>
+            { this.state.tasks.map(e => 
+                <p key={e.id}>
+                    {e.title}-{e.descripton}-{e.done}-{e.id}
+                    <Tasks/>
+                </p>) 
+            }
         </div>
-    );
+    }
 }
 
 export default App;
